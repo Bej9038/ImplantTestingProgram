@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Ben Jordan">
+    <meta name="description" content="Loudness Matching Start Page">
+
+    <title>Loudness Matching</title>
+    <link rel="stylesheet" href="../Style.css">
+    <script type = text/javascript src = "LoudnessMatching.js"></script>
+</head>
+<body>
+    <div id = direction>
+        <h2>
+            Test 2: Loudness Matching
+        </h2>
+
+        <h3>
+            Directions: You will hear two consecutive tones, one high tone and one low tone.
+            For each trial, select the tone that sounds loudest. If they are the same volume,
+            select "same" to complete part 1.
+        </h3>
+        <input id = exit type = button value = 'EXIT' onclick = "location.href =
+    '/Implant%20Testing%20Program/Signin/SigninPage.html'">
+    </div>
+
+    <form id = start action = LoudnessMatching.html method = post>
+        <input id = startbutton type = submit value = "Start Test">
+    </form>
+</body>
+
+<script>
+    let d = new Date();
+    let starttime = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+    localStorage.setItem('starttime', starttime);
+</script>
+</html>

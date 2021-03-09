@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Ben Jordan">
+    <meta name="description" content="Threshold Testing Start Page">
+
+    <title>Threshold Testing</title>
+    <link rel="stylesheet" href="../Style.css">
+    <script type = text/javascript src = "ThresholdTesting.js"></script>
+</head>
+<body>
+<div id = direction>
+    <h2>
+        Test 1: Threshold Testing
+    </h2>
+
+    <h3>
+        Directions: In this test, you will hear two consecutive tones of the same frequency.
+        Respond with "yes" or "no" depending on whether you heard the beeps or not. You will
+        be asked to repeat this process for 6 more frequencies.
+    </h3>
+    <input id = exit type = button value = 'EXIT' onclick = "location.href =
+    '/Implant%20Testing%20Program/Signin/SigninPage.html'">
+</div>
+
+<form id = start action = ThresholdTesting.html method = post>
+    <input id = startbutton type = submit value = "Start Test">
+</form>
+</body>
+<script>
+    let d = new Date();
+    let starttime = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+    localStorage.setItem('starttime', starttime);
+</script>
+</html>

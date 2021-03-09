@@ -1,0 +1,72 @@
+#snr1:hover
+{
+    background-color: rgba(79, 219, 37, 0.3) !important;
+}
+#snr2:hover
+{
+    background-color: rgba(155, 219, 37, 0.3) !important;
+}
+#snr3:hover
+{
+    background-color: rgba(204, 219, 37, 0.3) !important;
+}
+#snr4:hover
+{
+    background-color: rgba(219, 198, 37, 0.3) !important;
+}
+#snr5:hover
+{
+    background-color: rgba(219, 137, 37, 0.3) !important;
+}
+#snr6:hover
+{
+    background-color: rgba(219, 89, 37, 0.3) !important;
+}
+#snr7:hover
+{
+    background-color: rgba(219, 37, 37, 0.3) !important;
+}
+
+#snrLevel
+{
+    padding-top: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#difficulty
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.snrbutton
+{
+
+    text-align: center;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    border-radius: 0 !important;
+    background-color: var(--text-color) !important;
+    color: var(--text-color-2) !important;
+    box-shadow: none !important;
+    font-weight: lighter !important;
+    width: 230px !important;
+    animation: all 1s ease;
+}
+
+
+#snrhint
+{
+    margin-top: 0px;
+    color: var(--text-color-2);
+    font: var(--font);
+    font-weight: lighter;
+    font-size: 18px;
+}

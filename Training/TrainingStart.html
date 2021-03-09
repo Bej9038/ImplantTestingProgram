@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Ben Jordan">
+    <meta name="description" content="Training Start Page">
+
+    <title>Inharmonicity Training</title>
+    <link rel="stylesheet" href="../Style.css">
+    <script type = text/javascript src = "Training.js"></script>
+</head>
+<body>
+<div id = direction>
+    <h2>
+        Inharmonicity Training
+    </h2>
+
+    <h3>
+        Directions: In this task, you will see a large box. After hitting the go button, the program will produce a tone that
+        changes in pitch depending on your mouse's location in the box. Your goal is to find two points that create
+        the most harmonic sounding line. Once you've found a point, click on the box to select the point. Once you've
+        selected two points, the line you created will appear along with the actual line of harmonicity and a grade of
+        how close you got to the line. To continue onto the next trial, hit the go button.
+    </h3>
+    <input id = exit type = button value = 'EXIT' onclick = "location.href =
+    '/Implant%20Testing%20Program/Signin/SigninPage.html'">
+</div>
+
+<form id = start action = Training.html method = post>
+    <input id = startbutton type = submit value = "Start Training">
+</form>
+</body>
+<script>
+    let d = new Date();
+    let starttime = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+    localStorage.setItem('starttime', starttime);
+</script>
+</html>

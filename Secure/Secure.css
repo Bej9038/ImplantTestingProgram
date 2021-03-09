@@ -1,0 +1,84 @@
+#sqlData
+{
+    position: absolute;
+    top: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#dataTable
+{
+    margin-top: 54px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 34vh;
+    height: 350px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: var(--card-shadow);
+    border-radius: 4px;
+    animation: fadein ease 1s;
+    -webkit-animation: fadein ease 1s;
+    -moz-animation: fadein ease 1s;
+    -o-animation: fadein ease 1s;
+}
+
+#actionButton
+{
+    background-color: var(--text-color);
+    position: absolute;
+    height: 56px;
+    width: 56px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    box-shadow: var(--card-shadow);
+    bottom: 60px;
+    right: 60px;
+    animation: fadein ease 1s;
+    -webkit-animation: fadein ease 1s;
+    -moz-animation: fadein ease 1s;
+    -o-animation: fadein ease 1s;
+}
+
+#actionButton:hover
+{
+    background-color: var(--menu-highlight);
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    -ms-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    transition: all 250ms ease;
+}
+
+.dataSetSelector
+{
+    background-color: var(--text-color) !important;
+    color: var(--text-color-2) !important;
+    font-weight: lighter !important;
+    font-family: var(--font) !important;
+    font-size: 18px !important;
+}
+
+.dataSetSelector:hover
+{
+    background-color: var(--menu-highlight) !important;
+}
+
+#dataSets
+{
+    margin-top: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: fadein ease 1s;
+    -webkit-animation: fadein ease 1s;
+    -moz-animation: fadein ease 1s;
+    -o-animation: fadein ease 1s;
+}

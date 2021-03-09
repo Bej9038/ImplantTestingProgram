@@ -1,0 +1,300 @@
+:root
+{
+    --main-color: #80CBC4;
+    --main-color2: #B2DFDB;
+    --text-color: #FFFFFF;
+    --text-color-2: #607D8B;
+    --menu-highlight: #EEEEEE;
+    --error-color: #B00020;
+
+    --font: Helvetica;
+    --button-text-size: 30px;
+    --button-padding: 10px 10px;
+    --button-seperation: 12px;
+    --uiwidth: 130px;
+    --border-rad: 4px;
+    --card-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.17);
+    --card-shadow-2: 0 .5px 1px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.17);
+}
+
+@keyframes SINMode {
+    from{
+        mso-field-change-value: "Speech-In-Noise";
+    }
+    to{
+        : "Speech-In-Noise Practice";
+    }
+}
+
+@keyframes filter {
+    from {opacity: 100%; filter: grayscale(0) }
+    to {opacity: 50%; filter: grayscale(50%)}
+}
+
+@keyframes unfilter {
+    from {opacity: 50%; filter: grayscale(50%)}
+    to {opacity: 100%; filter: grayscale(0)}
+}
+
+@keyframes slideleft {
+    from{right: -300px}
+    to {right: 0}
+}
+
+@keyframes slideright {
+    from{right: 0}
+    to {right: -300px}
+}
+
+@keyframes letterFade {
+    from {color: white}
+    to{color: #607D8B}
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+input[type = button]
+{
+    padding: var(--button-padding);
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: var(--button-text-size);
+    border: none;
+    outline: none;
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    -ms-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    transition: all 250ms ease;
+    border-radius: var(--border-rad);
+    box-shadow:  var(--card-shadow);
+}
+
+input[type = button]:hover
+{
+    background-color: #B2DFDB;
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    -ms-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    transition: all 250ms ease;
+}
+
+input[type = submit]
+{
+    padding: var(--button-padding);
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: var(--button-text-size);
+    border: none;
+    outline: none;
+    border-radius: var(--border-rad);
+    box-shadow:  var(--card-shadow);
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    -ms-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    transition: all 250ms ease;
+}
+
+input[type = submit]:hover
+{
+    background-color: var(--main-color2);
+    /*color: var(--text-color);*/
+    -webkit-transition: all 250ms ease;
+    -moz-transition: all 250ms ease;
+    -ms-transition: all 250ms ease;
+    -o-transition: all 250ms ease;
+    transition: all 250ms ease;
+}
+
+h1 {
+    margin-top: 0px;
+    padding: 30px;
+    text-align: center;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    font-family: var(--font);
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: var(--border-rad);
+    box-shadow:  var(--card-shadow-2);
+}
+
+h2{
+    color: var(--text-color-2);
+    font-weight: lighter;
+    animation: letterFade ease 1s;
+    -webkit-animation: letterFade ease 1s;
+    -moz-animation: letterFade ease 1s;
+    -o-animation: letterFade ease 1s;
+}
+h3{
+    color: var(--text-color-2);
+    font-weight: lighter;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    animation: letterFade ease 1s;
+    -webkit-animation: letterFade ease 1s;
+    -moz-animation: letterFade ease 1s;
+    -o-animation: letterFade ease 1s;
+}
+
+#exit
+{
+    position: absolute;
+    right: 60px;
+    top: 34px;
+    width: auto;
+    margin: auto;
+    animation: fadein ease 1s;
+    background-color: var(--main-color);
+    color: var(--text-color);
+    box-shadow: var(--card-shadow);
+}
+
+#exit:hover
+{
+    background-color: var(--error-color);
+}
+
+#trial
+{
+    position: absolute;
+    font-family: var(--font);
+    font-size: var(--button-text-size);
+    top: 120px;
+}
+
+#question
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: var(--font);
+    font-size: var(--button-text-size);
+    color: var(--text-color-2);
+}
+
+#tone1
+{
+    width: var(--uiwidth);
+    margin-right: var(--button-seperation);
+}
+
+#tone2
+{
+    width: var(--uiwidth);
+    margin-left: var(--button-seperation);
+}
+
+/*Start Page*/
+
+#start
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 33vh;
+    animation: fadein ease 1s;
+}
+
+#startbutton
+{
+    background-color: var(--main-color);
+    color: var(--text-color);
+}
+#startbutton:hover
+{
+    background-color: var(--main-color2);
+}
+
+#direction
+{
+    text-align: center;
+    font-family: var(--font);
+    font-size: var(--button-text-size);
+    font-weight: bold;
+    background-color: var(--text-color);
+    /*box-shadow: var(--card-shadow);*/
+    /*border-radius: 4px;*/
+}
+
+/*Speech Testing*/
+
+#c1
+{
+    margin-right: 12px;
+}
+#c2
+{
+    margin-right: 12px;
+    margin-left: 12px;
+}
+#c3
+{
+    margin-right: 12px;
+    margin-left: 12px;
+}
+#c4
+{
+    margin-left: 12px;
+}
+
+#wordselect
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 70px;
+    animation: fadein ease 1s;
+}
+
+#correctness
+{
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: var(--font);
+    font-weight: lighter;
+    font-size: var(--button-text-size);
+}
+
+#continue
+{
+    width: 230px;
+    margin-right: 15px;
+}
+
+#repeat
+{
+    width: 230px;
+    margin-left: 15px;
+}
+
+#practicecontrols
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

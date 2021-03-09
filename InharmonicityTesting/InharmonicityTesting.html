@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Ben Jordan">
+    <meta name="description" content="Inharmonicity Testing Module">
+
+    <title>Inharmonicity Testing</title>
+    <link rel="stylesheet" href="../Style.css">
+    <link rel="stylesheet" href="../LED.css">
+    <link rel="stylesheet" href="../InharmonicityTesting/InharmonicityTesting.css">
+    <script type = text/javascript src = "InharmonicityTesting.js"></script>
+</head>
+<body>
+    <h1>Inharmonicty Testing</h1>
+    <h2 id = trial>Trial: 1</h2>
+    <input id = exit type = button value = 'EXIT' onclick = "location.href =
+    '/Implant%20Testing%20Program/Signin/SigninPage.html'">
+
+    <div class="container">
+        <div class="led-box">
+            <div class="led-red2" id = led-red ></div>
+        </div>
+    </div>
+
+    <div id = itui>
+        <input type = button id = tone1 value = "Tone 1">
+        <input type = button id = tone2 value = "Tone 2">
+    </div>
+
+    <h3 id = question> Which tone is more inharmonic?</h3>
+
+    <form id = submitdata method = post action = InharmonicityTesting.php>
+        <input type = hidden name = results id = results>
+        <input type = hidden name = "subj" id = "subj">
+        <input type = hidden name = starttime id = starttime >
+        <input type = hidden name = endtime id = endtime>
+    </form>
+</body>
+<script>
+    ledReset();
+    noiseLoad();
+    document.addEventListener('DOMContentLoaded', function () {main(); eventSetup();});
+</script>
+</html>

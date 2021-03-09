@@ -1,0 +1,12 @@
+#ttui
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 20vh;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    animation: fadein ease 1s;
+}

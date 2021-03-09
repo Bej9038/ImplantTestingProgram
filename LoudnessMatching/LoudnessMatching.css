@@ -1,0 +1,19 @@
+#lmui
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 20vh;
+    animation: fadein ease 1s;
+}
+
+#lmsubmit
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 80px;
+    animation: fadein ease 1s;
+}

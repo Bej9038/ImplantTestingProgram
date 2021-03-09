@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Ben Jordan">
+    <meta name="description" content="Threshold Testing Module">
+
+    <title>Threshold Testing</title>
+    <link rel="stylesheet" href="../Style.css">
+    <link rel="stylesheet" href="../LED.css">
+    <link rel="stylesheet" href="../ThresholdTesting/ThresholdTesting.css">
+    <script type = text/javascript src = "ThresholdTesting.js"></script>
+</head>
+<body onload = "setupPage(); readFreqCookie(); loadNoise()">
+
+    <h1 class = header> Threshold Testing</h1>
+    <h2 id = trial> </h2>
+
+    <input id = exit type = button value = 'EXIT'
+           onclick = "document.cookie = 'frequency=; expires=Thu, 01 Jan 1970 00:00:01 GMT';
+            location.href = '/Implant%20Testing%20Program/Signin/SigninPage.html'">
+
+    <form id = ttui>
+        <input type = button id = tone1 value = YES onclick = main(1)>
+        <input type = button id = tone2 value = NO onclick = main(2)>
+    </form>
+
+    <h3 id = question> </h3>
+
+    <form id = storedata method = post action = ThresholdTesting.php>
+        <input id = freq name = freq type = hidden>
+        <input id = amp name = amp type = hidden>
+        <input id = subj name = subj type = hidden>
+        <input type = hidden name = starttime id = starttime>
+        <input type = hidden name = endtime id = endtime>
+    </form>
+
+</body>
+<script>
+    function setupPage()
+    {
+        if(readFreqCookie() >= 0 && document.cookie[0] === 'f') {
+            if (readFreqCookie() === '7') {
+                document.cookie = "frequency=; expires=Thu, 01 Jan 1970 00:00:01 GMT";
+                window.location.href =
+                    "/Implant%20Testing%20Program/LoudnessMatching/LoudnessMatchingStart.html";
+            }
+            else
+            {
+                main(1);
+            }
+        }
+        else
+        {
+            document.cookie = "frequency=0";
+            main(1);
+        }
+
+    }
+</script>
+</html>

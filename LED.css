@@ -1,0 +1,119 @@
+:root
+{
+    --main-color: #80cbc4;
+    --main-color2: #4DB6AC;
+    --secondary-color: #4db1ae;
+}
+
+.container {
+    position: absolute;
+    left: 60px;
+    top: 42px;
+}
+
+.led-box {
+    height: 30px;
+    width: 25%;
+    margin: 10px 0;
+    float: left;
+}
+
+.led-box p {
+    font-size: 12px;
+    text-align: center;
+    margin: 1em;
+}
+
+.led-red {
+    margin: 0 auto;
+    width: 20px;
+    height: 20px;
+    background-color: #00695C;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 12px;
+}
+
+.led-red2
+{
+    margin: 0 auto;
+    width: 20px;
+    height: 20px;
+    background-color: #00695C;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 12px;
+    -webkit-animation: blinkRed .5s;
+    -moz-animation: blinkRed .5s;
+    -ms-animation: blinkRed .5s;
+    -o-animation: blinkRed .5s;
+    animation: blinkRed .5s;
+}
+
+
+@-webkit-keyframes blinkRed {
+    from { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+    50% { background-color: #E0F2F1; }
+    to { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+}
+@-moz-keyframes blinkRed {
+    from { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+    50% { background-color: #E0F2F1; }
+    to { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+}
+@-ms-keyframes blinkRed {
+    from { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+    50% { background-color: #E0F2F1; }
+    to { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+}
+@-o-keyframes blinkRed {
+    from { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+    50% { background-color: #E0F2F1; }
+    to { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+}
+@keyframes blinkRed {
+    from { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+    50% { background-color: #E0F2F1; }
+    to { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+}
+
+@-webkit-keyframes turnRed {
+    from { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+    to { background-color: #E0F2F1; }
+}
+@-moz-keyframes turnRed {
+    from { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+    to { background-color: #E0F2F1; }
+}
+@-ms-keyframes turnRed {
+    from { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+    to { background-color: #E0F2F1; }
+}
+@-o-keyframes turnRed {
+    from { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+    to { background-color: #E0F2F1; }
+}
+@keyframes turnRed {
+    from { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+    to { background-color: #E0F2F1; }
+}
+
+@-webkit-keyframes default {
+    from { background-color: #E0F2F1; }
+    to { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+ }
+@-moz-keyframes default {
+    from { background-color: #E0F2F1; }
+    to { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+}
+@-ms-keyframes default {
+    from { background-color: #E0F2F1; }
+    to { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+}
+@-o-keyframes default {
+    from { background-color: #E0F2F1; }
+    to { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+}
+@keyframes default {
+    from { background-color: #E0F2F1; }
+    to { background-color: #00695C; box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, #00695C 0 -1px 9px, #80cbc4 0 2px 0; }
+}
+   

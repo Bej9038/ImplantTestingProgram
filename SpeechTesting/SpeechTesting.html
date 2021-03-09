@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Ben Jordan">
+    <meta name="description" content="Speech Testing Module">
+
+    <title>Speech Testing</title>
+    <link rel="stylesheet" href="../Style.css">
+    <link rel="stylesheet" href="../LED.css">
+    <script type = text/javascript src = "SpeechTesting.js"></script>
+</head>
+<body onload = main();>
+    <h1>Speech Testing</h1>
+    <h2 id = trial>Trial: 1</h2>
+
+    <input id = exit type = button value = 'EXIT'
+           onclick = "document.cookie = 'frequency=; expires=Thu, 01 Jan 1970 00:00:01 GMT';
+            location.href = '/Implant%20Testing%20Program/Signin/SigninPage.html'">
+    <div class="container">
+        <div class="led-box">
+            <div class="led-red" id = led-red></div>
+        </div>
+    </div>
+
+    <div id = wordselect style="display: none">
+        <input type = button id = c1 onclick="buttonClick(1)">
+        <input type = button id = c2 onclick="buttonClick(2)">
+        <input type = button id = c3 onclick="buttonClick(3)">
+        <input type = button id = c4 onclick="buttonClick(4)">
+    </div>
+
+    <form id = "speechsave" method = post action = SpeechTesting.php>
+        <input type = hidden id = "outcome" name = outcome>
+        <input type = hidden name = "subj" id = "subj">
+        <input type = hidden name = "numc" id = "numc">
+        <input type = hidden name = starttime id = starttime>
+        <input type = hidden name = endtime id = endtime>
+    </form>
+</body>
+</html>

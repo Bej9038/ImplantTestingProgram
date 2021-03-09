@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Ben Jordan">
+    <meta name="description" content="Speech Testing Practice Module">
+
+    <title>Speech Testing</title>
+    <link rel="stylesheet" href="../Style.css">
+    <link rel="stylesheet" href="../LED.css">
+    <script type = text/javascript src = "SpeechTestingPractice.js"></script>
+</head>
+<body onload = main();>
+    <h1>Speech Testing Practice</h1>
+    <h2 id = trial>Trial: 1</h2>
+
+    <input id = exit type = button value = 'EXIT'
+           onclick = "document.cookie = 'frequency=; expires=Thu, 01 Jan 1970 00:00:01 GMT';
+            location.href = '/Implant%20Testing%20Program/Signin/SigninPage.html'">
+    <div class="container">
+        <div class="led-box">
+            <div class="led-red" id = led-red></div>
+        </div>
+    </div>
+
+    <div id = wordselect style="display: none">
+        <input type = button id = c1 onclick="buttonClick(1)">
+        <input type = button id = c2 onclick="buttonClick(2)">
+        <input type = button id = c3 onclick="buttonClick(3)">
+        <input type = button id = c4 onclick="buttonClick(4)">
+    </div>
+
+    <form id = "speechsave" method = post action = SpeechTestingPractice.php>
+        <input type = hidden id = "outcome">
+    </form>
+
+    <p id = correctness></p>
+
+    <div id = practicecontrols style = "display: none">
+        <input type = button value = CONTINUE id = continue onclick="continueToNextTrial()">
+        <input type = button value = "LISTEN AGAIN" id = repeat onclick="playSound()">
+    </div>
+</body>
+</html>

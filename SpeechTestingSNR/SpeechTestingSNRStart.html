@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Ben Jordan">
+    <meta name="description" content="Speech Testing Start Page">
+
+    <title>Speech Testing</title>
+    <link rel="stylesheet" href="../Style.css">
+    <link rel="stylesheet" href="SpeechTestingSNR.css">
+    <script type = text/javascript src = "SpeechTestingSNR.js"></script>
+</head>
+<body>
+<div id = direction>
+    <h2>
+        Speech-In-Noise SNR
+    </h2>
+
+    <h3>
+        Directions: In this test, you will hear a word spoken by either a male voice or a female voice. You will also
+        hear noise playing at the same time. 4 word choices will be displayed on the screen. Try to ignore the noise and
+        choose the word that best matches the spoken word.
+    </h3>
+
+    <div id=snrLevel>
+        <input id=snr1 class = snrbutton type = button value = +6db onclick = 'selectSNR(0.5012, 1, "+6db")'>
+        <input id=snr2 class = snrbutton type = button value = +4db onclick = 'selectSNR(0.6310, 2, "+4db")'>
+        <input id=snr3 class = snrbutton type = button value = +2db onclick = 'selectSNR(0.7943, 3, "+2db")'>
+        <input id=snr4 class = snrbutton type = button value = +0db onclick = 'selectSNR(1, 4, "+0db")'>
+        <input id=snr5 class = snrbutton type = button value = -2db onclick = 'selectSNR(1.2589, 5, "-2db")'>
+        <input id=snr6 class = snrbutton type = button value = -4db onclick = 'selectSNR(1.5849, 6, "-4db")'>
+        <input id=snr7 class = snrbutton type = button value = -6db onclick = 'selectSNR(1.9953, 7, "-6db")'>
+    </div>
+    <div id=difficulty>
+        <p style = "color: rgba(79, 219, 37, 0.3); width: 200px; font-weight: lighter; font: var(--font)">easiest</p>
+        <div style="width: 200px"> </div>
+        <div style="width: 200px"> </div>
+        <div style="width: 200px"> </div>
+        <div style="width: 200px"> </div>
+        <div style="width: 200px"> </div>
+        <p style = "color: rgba(219, 37, 37, 0.3); width: 200px; font-weight: lighter; font: var(--font)">hardest</p>
+    </div>
+    <input id = exit type = button value = 'EXIT' onclick = "location.href =
+    '/Implant%20Testing%20Program/Signin/SigninPage.html'">
+</div>
+
+<form id = start action = SpeechTestingSNR.html method = post>
+    <p id = snrhint>Please Select SNR Difficulty</p>
+    <input id = startbutton style = "display: none" type = submit value = "Start Test">
+</form>
+</body>
+<script>
+    let d = new Date();
+    let starttime = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+    localStorage.setItem('starttime', starttime);
+
+    let selected = false;
+
+    function selectSNR(gainMultiplier, b, level)
+    {
+        if(!selected)
+        {
+            let buttons = document.getElementsByClassName('snrbutton');
+            for(let i = 1; i < 8; i++)
+            {
+                let id = "snr" + i;
+                if(b != i)
+                {
+                    document.getElementById(id).style.display = 'none';
+                }
+            }
+                document.getElementById('difficulty').style.display = 'none';
+                document.getElementById('startbutton').style.display = 'flex';
+                document.getElementById('snrhint').style.display = 'none';
+                selected = true;
+        }
+        else if (selected)
+        {
+            for(let i = 1; i < 8; i++)
+            {
+                let id = "snr" + i;
+                document.getElementById(id).style.display = 'block';
+            }
+            document.getElementById('difficulty').style.display = 'flex';
+            document.getElementById('startbutton').style.display = 'none';
+            document.getElementById('snrhint').style.display = 'flex';
+            selected = false;
+        }
+        sessionStorage.setItem('snrGainMult', gainMultiplier);
+        sessionStorage.setItem('snrLevel', level);
+    }
+</script>
+</html>
