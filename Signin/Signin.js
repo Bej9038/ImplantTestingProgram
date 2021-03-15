@@ -215,6 +215,15 @@ function adminPrompt()
         document.getElementById('admindialog').style.animation = 'fadein ease .8s forwards';
         document.getElementById("admindialog").style.display = "flex";
         isAdminShowing = 1;
+
+        if(isSINShowing)
+        {
+            sinmodePrompt();
+        }
+        else if(isTrainingShowing)
+        {
+            trainingPrompt();
+        }
     }
     else
     {
@@ -232,6 +241,15 @@ function sinmodePrompt() {
         document.getElementById('sindialog').style.animation = 'fadein ease .8s forwards';
         document.getElementById("sindialog").style.display = "flex";
         isSINShowing = 1;
+
+        if(isAdminShowing)
+        {
+            adminPrompt();
+        }
+        else if(isTrainingShowing)
+        {
+            trainingPrompt();
+        }
     }
     else
     {
@@ -249,6 +267,15 @@ function trainingPrompt() {
         document.getElementById('trainingdialog').style.animation = 'fadein ease .8s forwards';
         document.getElementById("trainingdialog").style.display = "flex";
         isTrainingShowing = 1;
+
+        if(isAdminShowing)
+        {
+            adminPrompt();
+        }
+        else if(isSINShowing)
+        {
+            sinmodePrompt();
+        }
     }
     else
     {
