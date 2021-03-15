@@ -102,11 +102,32 @@ input[type = text] {
     width: 400px;
     background-color: var(--text-color);
     box-shadow: var(--card-shadow);
-    animation: fadein ease 1s forwards;
+    animation: fadein ease 0.8s forwards;
     border-radius: 4px;
 }
 
-.sinmode {
+#trainingdialog
+{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 216px;
+    text-align: center;
+    height: 200px;
+    width: 400px;
+    background-color: var(--text-color);
+    box-shadow: var(--card-shadow);
+    animation: fadein ease 0.8s forwards;
+    border-radius: 4px;
+}
+
+.modebutton {
     width: 200px;
     background-color: var(--text-color) !important;
     color: var(--text-color-2) !important;
@@ -116,12 +137,12 @@ input[type = text] {
     margin-bottom: 5px !important;
 }
 
-.sinmode:hover
+.modebutton:hover
 {
     background-color: var(--menu-highlight) !important;
 }
 
-.sinmodeSelected {
+.modebuttonSelected {
     width: 200px;
     background-color: var(--main-color) !important;
     font-size: 18px !important;

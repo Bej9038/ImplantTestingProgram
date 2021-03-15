@@ -107,7 +107,6 @@ function mouseDown(e)
 
 function displayGradient()
 {
-    //calculate best line
     let radian = Math.atan((freqToDim(F1upperLimit, 'y') - freqToDim(F1b, 'y'))/(freqToDim(F2upperLimit, 'x') - freqToDim(F2b, 'x')));
     let angle = -radian * 180 / Math.PI;
     console.log(angle);
@@ -295,7 +294,10 @@ function freqToDim(f, axis)
  */
 function randomizeDiagonal()
 {
-    diagonalOrientation = Math.floor(Math.random() * 4) + 1;
+    if(sessionStorage.getItem('trainingmode') === 'H')
+    {
+        diagonalOrientation = Math.floor(Math.random() * 4) + 1;
+    }
     console.log(diagonalOrientation);
 }
 
@@ -436,16 +438,28 @@ function pushMousePos(e)
  */
 function trialSetup()
 {
+    updateTrialNum();
     setFrequencyRange();
     randomizeDiagonal();
     // initNoise();
     initOsc();
     initCanvas();
-    trial++;
-    document.getElementById("trial").innerHTML = "Trial: " + trial + "/" + maxTrials;
-    document.title = "Inharmonicity Training - " + trial + "/" + maxTrials;
     mousePos[trial - 1].push("");
     mousePos[trial - 1].push("\nX1: " + F1b + " X2: " + F1upperLimit + "Y1: " + F2b + "Y2: " + F2upperLimit);
+}
+
+function updateTrialNum()
+{
+    trial++;
+    document.title = "Inharmonicity Training - " + trial + "/" + maxTrials;
+    if(sessionStorage.getItem('trainingmode') === 'E')
+    {
+        document.getElementById("trial").innerHTML = "Trial: " + trial + "/" + maxTrials + " Difficulty: Easy";
+    }
+    else if(sessionStorage.getItem('trainingmode') === 'H')
+    {
+        document.getElementById("trial").innerHTML = "Trial: " + trial + "/" + maxTrials + " Difficulty: Hard";
+    }
 }
 
 /**

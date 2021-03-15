@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../Signin/Signin.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <script type = text/javascript src = "../LoudnessMatching/LoudnessMatching.js"></script>
+    <script type="text/javascript" src = Signin.js></script>
 </head>
 <body onload = pageSetup(); style = "overflow: hidden">
 
@@ -52,9 +52,11 @@
     <div id=dropdown>
         <h1 id = dropdowntitle> Settings </h1>
         <div id= dropdownlist>
-            <input type = button class = dropdownitem value = 'Admin Mode' onclick = adminPrompt()>
+            <input type = button class = dropdownitem value = 'Admin Login' onclick = adminPrompt()>
 
-            <input type = button class = dropdownitem value = 'Speech-In-Noise Mode' onclick= sinmodePrompt()>
+            <input type = button class = dropdownitem value = 'Speech-In-Noise Mode' onclick = sinmodePrompt()>
+
+            <input type = button class = dropdownitem value = 'Training Mode' onclick = trainingPrompt()>
 
             <input type = button class = dropdownitem value = 'Signout' onclick = "sessionStorage.removeItem('name');
             sessionStorage.removeItem('isFromSignin');
@@ -74,194 +76,14 @@
     </form>
 
     <div id = sindialog>
-        <input type = button id = s class = sinmodeSelected value = Standard onclick=switchSINMode('S')>
-        <input type = button id = p class = sinmode value = Practice onclick=switchSINMode('P')>
-        <input type = button id = r class = sinmode value = SNR onclick=switchSINMode('R')>
+        <input type = button id = s class = modebuttonSelected value = Standard onclick=switchSINMode('S')>
+        <input type = button id = p class = modebutton value = Practice onclick=switchSINMode('P')>
+        <input type = button id = r class = modebutton value = SNR onclick=switchSINMode('R')>
     </div>
 
+    <div id = trainingdialog>
+        <input type = button id = ts class = modebuttonSelected value = Easy onclick=switchTrainingMode('E')>
+        <input type = button id = tr class = modebutton value = Hard onclick=switchTrainingMode('H')>
+    </div>
 </body>
-
-<script>
-    //let isPromptShowing = 0;
-    let isAdminShowing = 0;
-    let isSINShowing = 0;
-
-    function pageSetup()
-    {
-        if(sessionStorage.getItem("name"))
-        {
-            showMenu();
-        }
-        else
-        {
-            let d = new Date();
-            document.getElementById("currenttime").value = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-        }
-    }
-
-    function showMenu()
-    {
-        if(!sessionStorage.getItem("name"))
-        {
-            setTimeout(function ()
-            {
-                window.alert("Invalid Username");
-            }, 1000);
-        }
-        else {
-            if("<?php echo '$isadmin'?>" && "<?php echo '$isadmin'?>" === "1")
-            {
-                document.getElementById('pd').style.display = "flex";
-            }
-            if(sessionStorage.getItem("isFromSignin") === null)
-            {
-                document.getElementById("signin").style.animation = "fadeout ease .3s";
-                setTimeout(function ()
-                {
-                    document.getElementById("signin").style.display = "none";
-                    document.getElementById("menu").style.display = "flex";
-                    document.getElementById("settingsmenu").style.display = "flex";
-                    document.getElementById("welcome").innerHTML = "Welcome " + sessionStorage.getItem("name");
-                    sessionStorage.setItem("isFromSignin", "1");
-                }, 100);
-            }
-            else
-            {
-                document.getElementById("signin").style.display = "none";
-                document.getElementById("menu").style.display = "flex";
-                document.getElementById("settingsmenu").style.display = "flex";
-                document.getElementById("welcome").innerHTML = "Welcome " + sessionStorage.getItem("name");
-            }
-        }
-    }
-
-    function storeVariable()
-    {
-        sessionStorage.setItem("name", document.getElementById('name').value);
-    }
-
-    function siclick()
-    {
-        storeVariable();
-        setTimeout(function () {
-            showMenu();
-        }, 1000);
-    }
-
-    function toggleSettings()
-    {
-        if(getComputedStyle(document.getElementById('dropdown')).getPropertyValue('display') === "none")
-        {
-            document.getElementById('dropdown').style.display = "flex";
-            document.getElementById('dropdown').style.animation = "slideleft .8s forwards";
-            document.getElementById('blurbody').style.animation = "filter .8s ease-in forwards";
-            document.getElementById('menu').style.pointerEvents = "none";
-            setTimeout(function () {
-                document.getElementById('blurbody').onclick = toggleSettings;
-            }, 10);
-        }
-        else if(getComputedStyle(document.getElementById('dropdown')).getPropertyValue('display') === "flex")
-        {
-            if(isAdminShowing)
-            {
-                adminPrompt();
-            }
-            else if(isSINShowing)
-            {
-                sinmodePrompt();
-            }
-            else
-            {
-                document.getElementById('dropdown').style.animation = "slideright .8s forwards";
-                document.getElementById('blurbody').style.animation = "unfilter .8s ease-out forwards";
-                setTimeout(function (){
-                    document.getElementById('menu').style.pointerEvents = "all";
-                    document.getElementById('dropdown').style.display = "none";
-                    document.getElementById('blurbody').onclick = null;
-                }, 800);
-            }
-        }
-    }
-
-    function sinmodePrompt() {
-        if(!isSINShowing)
-        {
-            document.getElementById('sindialog').style.animation = 'fadein ease .8s forwards';
-            document.getElementById("sindialog").style.display = "flex";
-            isSINShowing = 1;
-        }
-        else
-        {
-            document.getElementById('sindialog').style.animation = 'fadeout ease .8s forwards';
-            setTimeout(function () {
-                document.getElementById("sindialog").style.display = "none";
-                isSINShowing = 0;
-            }, 800);
-        }
-    }
-
-    function switchSINMode(mode)
-    {
-        if(mode === 'S')
-        {
-            document.getElementById('beg').onclick = function () {
-                         location.href = '/Implant%20Testing%20Program/SpeechTesting/SpeechTestingStart.html';
-                     };
-            document.getElementById("beg").value = "Speech-In-Noise";
-
-            document.getElementById('s').classList.add('sinmodeSelected');
-            document.getElementById('s').classList.remove('sinmode');
-            document.getElementById('p').classList.add('sinmode');
-            document.getElementById('p').classList.remove('sinmodeSelected');
-            document.getElementById('r').classList.add('sinmode');
-            document.getElementById('r').classList.remove('sinmodeSelected');
-        }
-        else if(mode === 'P')
-        {
-            document.getElementById('beg').onclick = function () {
-                location.href = '/Implant%20Testing%20Program/SpeechTestingPractice/SpeechTestingPracticeStart.html';
-            };
-            document.getElementById("beg").value = "Speech-In-Noise Practice";
-
-            document.getElementById('s').classList.add('sinmode');
-            document.getElementById('s').classList.remove('sinmodeSelected');
-            document.getElementById('p').classList.add('sinmodeSelected');
-            document.getElementById('p').classList.remove('sinmode');
-            document.getElementById('r').classList.add('sinmode');
-            document.getElementById('r').classList.remove('sinmodeSelected');
-        }
-        else if(mode === 'R')
-        {
-            document.getElementById('beg').onclick = function () {
-                location.href = '/Implant%20Testing%20Program/SpeechTestingSNR/SpeechTestingSNRStart.html';
-            };
-            document.getElementById("beg").value = "Speech-In-Noise SNR";
-
-            document.getElementById('s').classList.add('sinmode');
-            document.getElementById('s').classList.remove('sinmodeSelected');
-            document.getElementById('p').classList.add('sinmode');
-            document.getElementById('p').classList.remove('sinmodeSelected');
-            document.getElementById('r').classList.add('sinmodeSelected');
-            document.getElementById('r').classList.remove('sinmode');
-        }
-    }
-
-    function adminPrompt()
-    {
-        if(!isAdminShowing)
-        {
-            document.getElementById('admindialog').style.animation = 'fadein ease .8s forwards';
-            document.getElementById("admindialog").style.display = "flex";
-            isAdminShowing = 1;
-        }
-        else
-        {
-            document.getElementById('admindialog').style.animation = 'fadeout ease .8s forwards';
-            setTimeout(function () {
-                document.getElementById("admindialog").style.display = "none";
-                isAdminShowing = 0;
-            }, 800);
-        }
-    }
-</script>
 </html>
