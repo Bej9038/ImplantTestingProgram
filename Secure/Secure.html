@@ -17,33 +17,6 @@
     <input id = exit type = button value = 'EXIT' onclick = "location.href =
     '/Implant%20Testing%20Program/Signin/SigninPage.html'">
 
-    <?php
-        echo "<table id = dataTable>";
-        $host = "localhost";
-        $user = "auditot7_bej9038";
-        $password = "jordan";
-        $db = "auditot7_UserData";
-        $conn = new mysqli($host,$user,$password,$db);
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-
-        $sql = "SELECT Username, TrialID from Users";
-        $result = $conn -> query($sql);
-
-        if($result-> num_rows > 0)
-        {
-            while($row = $result -> fetch_assoc())
-            {
-                echo "<tr id='sqlData'><td>". $row["Username"] . "<td><td>" . $row["TrialID"] . "</td></tr>";
-            }
-        }
-        else {
-            echo "0 result";
-        }
-        echo "</table>";
-        ?>
-
     <button type = button class="mdc-icon-button material-icons" id = actionButton>delete</button>
 
     <div id = dataSets>
@@ -57,6 +30,14 @@
 </html>
 
 <script>
+
+    let req = new XMLHttpRequest();
+    req.onload = function()
+    {
+        alert(this.responseText);
+    };
+    req.open("post", "Secure.php", true);
+    req.send();
     function displayUserData(dataset)
     {
 
