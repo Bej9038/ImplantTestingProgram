@@ -323,7 +323,7 @@ function buttonClick(b)
     {
         numIncorrect++;
     }
-    let outcome = "\n" + spokenWord + ", " + userWord + ", " + Math.abs(clickTime.getHours() - showTime.getHours()) + ":" +
+    let outcome = "\nS: " + spokenWord + " U: " + userWord + " T: " + Math.abs(clickTime.getHours() - showTime.getHours()) + ":" +
     Math.abs(clickTime.getMinutes() - showTime.getMinutes()) + ":" +
     Math.abs(clickTime.getSeconds() - showTime.getSeconds()) + ":" +
     String(Math.abs(clickTime.getMilliseconds() - showTime.getMilliseconds())).padStart(3, '0');
