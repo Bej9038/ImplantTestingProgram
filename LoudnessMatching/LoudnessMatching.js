@@ -153,6 +153,7 @@ function disableUI()
     document.getElementById("tone1").disabled = true;
     document.getElementById("tone2").disabled = true;
     document.getElementById("neither").disabled = true;
+    document.getElementById("lmui").style.display = "none";
 }
 
 /**
@@ -163,6 +164,7 @@ function enableUI()
     document.getElementById("tone1").disabled = false;
     document.getElementById("tone2").disabled = false;
     document.getElementById("neither").disabled = false;
+    document.getElementById("lmui").style.display = "flex";
 }
 
 /**

@@ -99,7 +99,7 @@ let wordGroups = [{a: "ball", b: "fall", c: "shawl", d: "wall"}, {a: "fall", b: 
     {a: "red", b: "said", c: "dead", d: "led"}, {a: "led", b: "said", c: "dead", d: "red"},
 
     {a: "kneel", b: "meal", c: "veal", d: "feel"}, {a: "meal", b: "kneel", c: "veal", d: "feel"},
-    {a: "veal", b: "kneel", c: "meal", d: "feel"}, {a: "feel", b: "kneel", c: "meal", d: "meal"},
+    {a: "veal", b: "kneel", c: "meal", d: "feel"}, {a: "feel", b: "kneel", c: "veal", d: "meal"},
 
     {a: "sin", b: "shin", c: "kin", d: "thin"}, {a: "shin", b: "sin", c: "kin", d: "thin"},
     {a: "kin", b: "sin", c: "shin", d: "thin"}, {a: "thin", b: "sin", c: "shin", d: "kin"},

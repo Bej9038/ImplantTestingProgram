@@ -145,8 +145,8 @@ h3{
     color: var(--text-color-2);
     font-weight: lighter;
     width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    top:50%;
     animation: letterFade ease 1s;
     -webkit-animation: letterFade ease 1s;
     -moz-animation: letterFade ease 1s;

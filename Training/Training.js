@@ -17,8 +17,8 @@ overallGain.connect(dac);
 
 let ctx;
 let dim = 600;
-let offsetX = -9;
-let offsetY = -186;
+let offsetX = -13;
+let offsetY = -220;
 let diagonalOrientation = 1;
 
 let F1upperLimit = 160;

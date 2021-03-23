@@ -186,8 +186,9 @@ function readFreqCookie()
  */
 function disabledUI()
 {
-    document.getElementById("yes").disabled = true;
-    document.getElementById("no").disabled = true;
+    document.getElementById("tone1").disabled = true;
+    document.getElementById("tone2").disabled = true;
+    document.getElementById("ttui").style.display = "none";
 }
 
 /**
@@ -195,8 +196,9 @@ function disabledUI()
  */
 function enableUI()
 {
-    document.getElementById("yes").disabled = false;
-    document.getElementById("no").disabled = false;
+    document.getElementById("tone1").disabled = false;
+    document.getElementById("tone2").disabled = false;
+    document.getElementById("ttui").style.display = "flex";
 }
 
 // /**

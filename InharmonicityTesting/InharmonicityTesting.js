@@ -181,6 +181,8 @@ function disabledUI()
 {
     document.getElementById("tone1").disabled = true;
     document.getElementById("tone2").disabled = true;
+    document.getElementById("itui").style.display = "none";
+
 }
 
 /**
@@ -190,6 +192,7 @@ function enableUI()
 {
     document.getElementById("tone1").disabled = false;
     document.getElementById("tone2").disabled = false;
+    document.getElementById("itui").style.display = "flex";
 }
 
 /**
