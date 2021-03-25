@@ -365,7 +365,7 @@ function initAudio()
 function loadNoise1()
 {
     let request = new XMLHttpRequest();
-    request.open("GET", "/Implant Testing Program/TE_noise_50-500Hz_300-2400ms.wav", true);
+    request.open("GET", "InharmonicityTesting/White 10m.mp3", true);
     request.responseType = "arraybuffer";
     request.onload = function()
     {
@@ -380,7 +380,7 @@ function loadNoise1()
 function loadNoise2()
 {
     let request = new XMLHttpRequest();
-    request.open("GET", "/Implant Testing Program/TE_noise_50-500Hz_300-2400ms.wav", true);
+    request.open("GET", "InharmonicityTesting/White 10m.mp3", true);
     request.responseType = "arraybuffer";
     request.onload = function()
     {
@@ -490,26 +490,26 @@ function startstopS1(op)
 {
     if(op === "start") {
         noise1.start();
-        for (let i = 0; i < S1LowOscList.length; i++)
-        {
-            S1LowOscList[i].start();
-        }
-        for (let i = 0; i < S1HighOscList.length; i++)
-        {
-            S1HighOscList[i].start();
-        }
+        // for (let i = 0; i < S1LowOscList.length; i++)
+        // {
+        //     S1LowOscList[i].start();
+        // }
+        // for (let i = 0; i < S1HighOscList.length; i++)
+        // {
+        //     S1HighOscList[i].start();
+        // }
     }
     else if(op === "stop")
     {
         noise1.stop();
-        for (let i = 0; i < S1LowOscList.length; i++)
-        {
-            S1LowOscList[i].stop();
-        }
-        for (let i = 0; i < S1HighOscList.length; i++)
-        {
-            S1HighOscList[i].stop();
-        }
+        // for (let i = 0; i < S1LowOscList.length; i++)
+        // {
+        //     S1LowOscList[i].stop();
+        // }
+        // for (let i = 0; i < S1HighOscList.length; i++)
+        // {
+        //     S1HighOscList[i].stop();
+        // }
     }
 }
 
@@ -522,22 +522,22 @@ function startstopS2(op)
     if(op === "start")
     {
         noise2.start();
-        for (let i = 0; i < S2LowOscList.length; i++) {
-            S2LowOscList[i].start();
-        }
-        for (let i = 0; i < S2HighOscList.length; i++) {
-            S2HighOscList[i].start();
-        }
+        // for (let i = 0; i < S2LowOscList.length; i++) {
+        //     S2LowOscList[i].start();
+        // }
+        // for (let i = 0; i < S2HighOscList.length; i++) {
+        //     S2HighOscList[i].start();
+        // }
     }
     else if(op === "stop")
     {
         noise2.stop();
-        for (let i = 0; i < S2LowOscList.length; i++) {
-            S2LowOscList[i].stop();
-        }
-        for (let i = 0; i < S2HighOscList.length; i++) {
-            S2HighOscList[i].stop();
-        }
+        // for (let i = 0; i < S2LowOscList.length; i++) {
+        //     S2LowOscList[i].stop();
+        // }
+        // for (let i = 0; i < S2HighOscList.length; i++) {
+        //     S2HighOscList[i].stop();
+        // }
     }
 }
 

@@ -8,8 +8,8 @@ let audioCTX = new AudioContext();
 let dac = audioCTX.destination;
 let mute = audioCTX.createGain(); mute.gain.value = 0;
 let overallGain = audioCTX.createGain();
-// let noise;
-// let noiseBuffer;
+let noise;
+let noiseBuffer;
 
 overallGain.gain.value = 1/9;
 mute.connect(overallGain);
@@ -408,17 +408,6 @@ function play()
     }
 }
 
-// /**
-//  * Saves the mouse position over time
-//  */
-// function saveMousePos(e)
-// {
-//     if(allowInput)
-//     {
-//         pushMousePos(e);
-//     }
-// }
-
 /**
  * Saves the mouse pos to the mousePos array
  * @param e The mouse pos
@@ -441,7 +430,7 @@ function trialSetup()
     updateTrialNum();
     setFrequencyRange();
     randomizeDiagonal();
-    // initNoise();
+    initNoise();
     initOsc();
     initCanvas();
     mousePos[trial - 1].push("");
@@ -516,30 +505,30 @@ function initOsc()
     }
 }
 
-// /**
-//  * Prepares the noise for play
-//  */
-// function initNoise()
-// {
-//     noise = audioCTX.createBufferSource();
-//     noise.buffer = noiseBuffer;
-//     noise.loop = true;
-// }
+/**
+ * Prepares the noise for play
+ */
+function initNoise()
+{
+    noise = audioCTX.createBufferSource();
+    noise.buffer = noiseBuffer;
+    noise.loop = true;
+}
 
-// /**
-//  * Loads the noise file async
-//  */
-// function loadNoise()
-// {
-//     let request = new XMLHttpRequest();
-//     request.open("GET", "", true);
-//     request.responseType = "arraybuffer";
-//     request.onload = function()
-//     {
-//         audioCTX.decodeAudioData(request.response, (data) => noiseBuffer = data);
-//     };
-//     request.send();
-// }
+/**
+ * Loads the noise file async
+ */
+function loadNoise()
+{
+    let request = new XMLHttpRequest();
+    request.open("GET", "White 10m.mp3", true);
+    request.responseType = "arraybuffer";
+    request.onload = function()
+    {
+        audioCTX.decodeAudioData(request.response, (data) => noiseBuffer = data);
+    };
+    request.send();
+}
 
 /**
  * Randomly chooses the frequency range for the tones
@@ -582,28 +571,28 @@ function clearCanvas()
 
 function startOscillators()
 {
-    //noise.start();
-    for(let i = 0; i < F0_Xlist.length; i++)
-    {
-        F0_Xlist[i].start();
-    }
-    for(let i = 0; i < F0_Ylist.length; i++)
-    {
-        F0_Ylist[i].start();
-    }
+    noise.start();
+    // for(let i = 0; i < F0_Xlist.length; i++)
+    // {
+    //     F0_Xlist[i].start();
+    // }
+    // for(let i = 0; i < F0_Ylist.length; i++)
+    // {
+    //     F0_Ylist[i].start();
+    // }
 }
 
 function stopOscillators()
 {
-    //noise.stop();
-    for(let i = 0; i < F0_Xlist.length; i++)
-    {
-        F0_Xlist[i].stop();
-    }
-    for(let i = 0; i < F0_Ylist.length; i++)
-    {
-        F0_Ylist[i].stop();
-    }
+    noise.stop();
+    // for(let i = 0; i < F0_Xlist.length; i++)
+    // {
+    //     F0_Xlist[i].stop();
+    // }
+    // for(let i = 0; i < F0_Ylist.length; i++)
+    // {
+    //     F0_Ylist[i].stop();
+    // }
 }
 
 /**
