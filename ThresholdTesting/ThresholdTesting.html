@@ -8,7 +8,6 @@
     <title>Threshold Testing</title>
     <link rel="stylesheet" href="../Style.css">
     <link rel="stylesheet" href="../LED.css">
-    <link rel="stylesheet" href="../ThresholdTesting/ThresholdTesting.css">
     <script type = text/javascript src = "ThresholdTesting.js"></script>
 </head>
 <body onload = "setupPage(); readFreqCookie(); loadNoise()">
@@ -20,7 +19,7 @@
            onclick = "document.cookie = 'frequency=; expires=Thu, 01 Jan 1970 00:00:01 GMT';
             location.href = '/Implant%20Testing%20Program/Signin/SigninPage.html'">
 
-    <form id = ttui>
+    <form id = testui>
         <input type = button id = tone1 value = YES onclick = main(1)>
         <input type = button id = tone2 value = NO onclick = main(2)>
     </form>

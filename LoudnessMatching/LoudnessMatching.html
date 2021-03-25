@@ -8,7 +8,7 @@
     <title>Loudness Matching</title>
     <link rel="stylesheet" href="../Style.css">
     <link rel="stylesheet" href="../LED.css">
-    <link rel="stylesheet" href="../LoudnessMatching/LoudnessMatching.css">
+    <link rel="stylesheet" href="LoudnessMatching.css">
     <script type = text/javascript src = "LoudnessMatching.js"></script>
 </head>
 <body>
@@ -24,18 +24,18 @@
         </div>
     </div>
 
-    <div id = lmui>
+    <div id = testui>
         <input type = button id = tone1 value = "Tone 1">
         <input type = button id = tone2 value = "Tone 2">
-
-        <form id= lmsubmit method = "post" action = "LoudnessMatching.php">
-            <input type = hidden name = ampratio id = ampratio>
-            <input type = hidden name = "subj" id = "subj">
-            <input type = hidden name = starttime id = starttime>
-            <input type = hidden name = endtime id = endtime>
-            <input type = submit  id = "neither" value = "Same">
-        </form>
     </div>
+
+    <form id= lmsubmit method = "post" action = "LoudnessMatching.php">
+        <input type = hidden name = ampratio id = ampratio>
+        <input type = hidden name = "subj" id = "subj">
+        <input type = hidden name = starttime id = starttime>
+        <input type = hidden name = endtime id = endtime>
+        <input type = submit  id = "neither" value = "Same">
+    </form>
 
     <h3 id = question> Which tone is louder?</h3>
 </body>

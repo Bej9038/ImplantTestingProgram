@@ -181,10 +181,16 @@ h3{
 
 #question
 {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    min-height: 30vh;
     font-family: var(--font);
     font-size: var(--button-text-size);
     color: var(--text-color-2);
@@ -200,6 +206,21 @@ h3{
 {
     width: var(--uiwidth);
     margin-left: var(--button-seperation);
+}
+
+#testui
+{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    left: 0;
+    right: 0;
+    min-height: 48vh;
+    animation: fadein ease 1s;
 }
 
 /*Start Page*/
