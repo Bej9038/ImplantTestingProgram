@@ -9,6 +9,6 @@
     margin-left: auto;
     left: 0;
     right: 0;
-    min-height: 120vh;
+    top: 80vh;
     animation: fadein ease 1s;
 }

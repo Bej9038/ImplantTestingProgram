@@ -181,7 +181,7 @@ function disabledUI()
 {
     document.getElementById("tone1").disabled = true;
     document.getElementById("tone2").disabled = true;
-    document.getElementById("itui").style.display = "none";
+    document.getElementById("testui").style.display = "none";
 
 }
 
@@ -192,7 +192,7 @@ function enableUI()
 {
     document.getElementById("tone1").disabled = false;
     document.getElementById("tone2").disabled = false;
-    document.getElementById("itui").style.display = "flex";
+    document.getElementById("testui").style.display = "flex";
 }
 
 /**
@@ -489,27 +489,27 @@ function S2FilterSetup(S2Lowgain, S2Highgain)
 function startstopS1(op)
 {
     if(op === "start") {
-        noise1.start();
-        // for (let i = 0; i < S1LowOscList.length; i++)
-        // {
-        //     S1LowOscList[i].start();
-        // }
-        // for (let i = 0; i < S1HighOscList.length; i++)
-        // {
-        //     S1HighOscList[i].start();
-        // }
+        // noise1.start();
+        for (let i = 0; i < S1LowOscList.length; i++)
+        {
+            S1LowOscList[i].start();
+        }
+        for (let i = 0; i < S1HighOscList.length; i++)
+        {
+            S1HighOscList[i].start();
+        }
     }
     else if(op === "stop")
     {
-        noise1.stop();
-        // for (let i = 0; i < S1LowOscList.length; i++)
-        // {
-        //     S1LowOscList[i].stop();
-        // }
-        // for (let i = 0; i < S1HighOscList.length; i++)
-        // {
-        //     S1HighOscList[i].stop();
-        // }
+        // noise1.stop();
+        for (let i = 0; i < S1LowOscList.length; i++)
+        {
+            S1LowOscList[i].stop();
+        }
+        for (let i = 0; i < S1HighOscList.length; i++)
+        {
+            S1HighOscList[i].stop();
+        }
     }
 }
 
@@ -521,23 +521,23 @@ function startstopS2(op)
 {
     if(op === "start")
     {
-        noise2.start();
-        // for (let i = 0; i < S2LowOscList.length; i++) {
-        //     S2LowOscList[i].start();
-        // }
-        // for (let i = 0; i < S2HighOscList.length; i++) {
-        //     S2HighOscList[i].start();
-        // }
+        // noise2.start();
+        for (let i = 0; i < S2LowOscList.length; i++) {
+            S2LowOscList[i].start();
+        }
+        for (let i = 0; i < S2HighOscList.length; i++) {
+            S2HighOscList[i].start();
+        }
     }
     else if(op === "stop")
     {
-        noise2.stop();
-        // for (let i = 0; i < S2LowOscList.length; i++) {
-        //     S2LowOscList[i].stop();
-        // }
-        // for (let i = 0; i < S2HighOscList.length; i++) {
-        //     S2HighOscList[i].stop();
-        // }
+        // noise2.stop();
+        for (let i = 0; i < S2LowOscList.length; i++) {
+            S2LowOscList[i].stop();
+        }
+        for (let i = 0; i < S2HighOscList.length; i++) {
+            S2HighOscList[i].stop();
+        }
     }
 }
 

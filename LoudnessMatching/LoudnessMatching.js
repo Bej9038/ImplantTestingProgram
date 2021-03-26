@@ -26,10 +26,10 @@ let valeur_mistuning;
 let audioCTX = new AudioContext();
 let dac = audioCTX.destination;
 
-let noise1;
-let noise1Buffer;
-let noise2;
-let noise2Buffer;
+// let noise1;
+// let noise1Buffer;
+// let noise2;
+// let noise2Buffer;
 
 let S1gain = audioCTX.createGain();
 let S2gain = audioCTX.createGain();
@@ -74,7 +74,7 @@ function main()
         S1OscList = [];
         S2OscList = [];
 
-        noiseSetup();
+        // noiseSetup();
 
         generateS1();
         generateS2();
@@ -136,14 +136,14 @@ function main()
     }
 }
 
-/**
- * Calls noise load functions
- */
-function loadNoise()
-{
-    loadNoise1();
-    loadNoise2();
-}
+// /**
+//  * Calls noise load functions
+//  */
+// function loadNoise()
+// {
+//     loadNoise1();
+//     loadNoise2();
+// }
 
 /**
  * Disables test ui
@@ -153,7 +153,8 @@ function disableUI()
     document.getElementById("tone1").disabled = true;
     document.getElementById("tone2").disabled = true;
     document.getElementById("neither").disabled = true;
-    document.getElementById("lmui").style.display = "none";
+    document.getElementById("testui").style.display = "none";
+    document.getElementById("neither").style.display = "none";
 }
 
 /**
@@ -164,51 +165,52 @@ function enableUI()
     document.getElementById("tone1").disabled = false;
     document.getElementById("tone2").disabled = false;
     document.getElementById("neither").disabled = false;
-    document.getElementById("lmui").style.display = "flex";
+    document.getElementById("testui").style.display = "flex";
+    document.getElementById("neither").style.display = "flex";
 }
 
-/**
- * Prepares noise for playback
- */
-function noiseSetup()
-{
-    noise1 = audioCTX.createBufferSource();
-    noise2 = audioCTX.createBufferSource();
-    noise1.buffer = noise1Buffer;
-    noise2.buffer = noise2Buffer;
-    noise1.connect(S1gain);
-    noise2.connect(S2gain);
-}
-
-/**
- * Loads noise 1
- */
-function loadNoise1()
-{
-    let request = new XMLHttpRequest();
-    request.open("GET", "/Implant Testing Program/TE_noise_50-500Hz_300-2400ms.wav", true);
-    request.responseType = "arraybuffer";
-    request.onload = function()
-    {
-        audioCTX.decodeAudioData(request.response, (data) => noise1Buffer = data);
-    };
-    request.send();
-}
-
-/**
- * Loads noise 2
- */
-function loadNoise2()
-{
-    let request = new XMLHttpRequest();
-    request.open("GET", "/Implant Testing Program/TE_noise_50-500Hz_300-2400ms.wav", true);
-    request.responseType = "arraybuffer";
-    request.onload = function()
-    {
-        audioCTX.decodeAudioData(request.response, (data) => noise2Buffer = data);
-    };
-    request.send();
-}
+// /**
+//  * Prepares noise for playback
+//  */
+// function noiseSetup()
+// {
+//     noise1 = audioCTX.createBufferSource();
+//     noise2 = audioCTX.createBufferSource();
+//     noise1.buffer = noise1Buffer;
+//     noise2.buffer = noise2Buffer;
+//     noise1.connect(S1gain);
+//     noise2.connect(S2gain);
+// }
+//
+// /**
+//  * Loads noise 1
+//  */
+// function loadNoise1()
+// {
+//     let request = new XMLHttpRequest();
+//     request.open("GET", "/Implant Testing Program/TE_noise_50-500Hz_300-2400ms.wav", true);
+//     request.responseType = "arraybuffer";
+//     request.onload = function()
+//     {
+//         audioCTX.decodeAudioData(request.response, (data) => noise1Buffer = data);
+//     };
+//     request.send();
+// }
+//
+// /**
+//  * Loads noise 2
+//  */
+// function loadNoise2()
+// {
+//     let request = new XMLHttpRequest();
+//     request.open("GET", "/Implant Testing Program/TE_noise_50-500Hz_300-2400ms.wav", true);
+//     request.responseType = "arraybuffer";
+//     request.onload = function()
+//     {
+//         audioCTX.decodeAudioData(request.response, (data) => noise2Buffer = data);
+//     };
+//     request.send();
+// }
 
 /**
  * Creates S1's oscs and adds them to the list
@@ -271,7 +273,7 @@ function S2FilterSetup()
 function startstopS1(op)
 {
     if(op === "start") {
-        noise1.start();
+        // noise1.start();
         for (let i = 0; i < S1OscList.length; i++)
         {
             S1OscList[i].start();
@@ -279,7 +281,7 @@ function startstopS1(op)
     }
     else
     {
-        noise1.stop();
+        // noise1.stop();
         for (let i = 0; i < S1OscList.length; i++)
         {
             S1OscList[i].stop();
@@ -295,14 +297,14 @@ function startstopS2(op)
 {
     if(op === "start")
     {
-        noise2.start();
+        // noise2.start();
         for (let i = 0; i < S2OscList.length; i++) {
             S2OscList[i].start();
         }
     }
     else
     {
-        noise2.stop();
+        // noise2.stop();
         for (let i = 0; i < S2OscList.length; i++) {
             S2OscList[i].stop();
         }

@@ -137,7 +137,7 @@ function main(response)
         document.getElementById("trial").innerHTML = " Frequency: " + frequencies[readFreqCookie()] + " Trial: " + trialnum;
         document.title = "Threshold Testing - " + frequencies[readFreqCookie()];
         document.getElementById("question").innerHTML = "Did you hear two beeps?";
-        document.getElementById("ttui").style.display = "flex";
+        document.getElementById("testui").style.display = "flex";
         generateTone(frequencies[readFreqCookie()]);
     }
 }
@@ -169,7 +169,7 @@ function resetTrial()
     amp = startingAmp;
     document.getElementById("trial").style.display = "none";
     document.getElementById("question").innerHTML = "Storing Threshold..." + '<br>' + '<br>'+ "Beginning Next Trial";
-    document.getElementById("ttui").style.display = "none";
+    document.getElementById("testui").style.display = "none";
 }
 
 /**
@@ -188,7 +188,7 @@ function disabledUI()
 {
     document.getElementById("tone1").disabled = true;
     document.getElementById("tone2").disabled = true;
-    document.getElementById("ttui").style.display = "none";
+    document.getElementById("testui").style.display = "none";
 }
 
 /**
@@ -198,7 +198,7 @@ function enableUI()
 {
     document.getElementById("tone1").disabled = false;
     document.getElementById("tone2").disabled = false;
-    document.getElementById("ttui").style.display = "flex";
+    document.getElementById("testui").style.display = "flex";
 }
 
 // /**
