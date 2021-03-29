@@ -365,7 +365,7 @@ function initAudio()
 function loadNoise1()
 {
     let request = new XMLHttpRequest();
-    request.open("GET", "InharmonicityTesting/White 10m.mp3", true);
+    request.open("GET", "TE_noise_50-500Hz_300-2400ms.wav", true);
     request.responseType = "arraybuffer";
     request.onload = function()
     {
@@ -380,7 +380,7 @@ function loadNoise1()
 function loadNoise2()
 {
     let request = new XMLHttpRequest();
-    request.open("GET", "InharmonicityTesting/White 10m.mp3", true);
+    request.open("GET", "TE_noise_50-500Hz_300-2400ms.wav", true);
     request.responseType = "arraybuffer";
     request.onload = function()
     {
@@ -489,7 +489,7 @@ function S2FilterSetup(S2Lowgain, S2Highgain)
 function startstopS1(op)
 {
     if(op === "start") {
-        // noise1.start();
+        noise1.start();
         for (let i = 0; i < S1LowOscList.length; i++)
         {
             S1LowOscList[i].start();
@@ -501,7 +501,7 @@ function startstopS1(op)
     }
     else if(op === "stop")
     {
-        // noise1.stop();
+        noise1.stop();
         for (let i = 0; i < S1LowOscList.length; i++)
         {
             S1LowOscList[i].stop();
@@ -521,7 +521,7 @@ function startstopS2(op)
 {
     if(op === "start")
     {
-        // noise2.start();
+        noise2.start();
         for (let i = 0; i < S2LowOscList.length; i++) {
             S2LowOscList[i].start();
         }
@@ -531,7 +531,7 @@ function startstopS2(op)
     }
     else if(op === "stop")
     {
-        // noise2.stop();
+        noise2.stop();
         for (let i = 0; i < S2LowOscList.length; i++) {
             S2LowOscList[i].stop();
         }
