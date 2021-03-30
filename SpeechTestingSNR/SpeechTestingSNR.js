@@ -284,7 +284,7 @@ function fillButtons()
     document.getElementById("c2").value = b2;
     document.getElementById("c3").value = b3;
     document.getElementById("c4").value = b4;
-    document.getElementById("wordselect").style.display = "flex";
+    document.getElementById("testui").style.display = "flex";
 
     showTime = new Date();
 }
@@ -330,7 +330,7 @@ function buttonClick(b)
 
     trialOutcomes[trial - 1] = outcome;
 
-    document.getElementById("wordselect").style.display = "none";
+    document.getElementById("testui").style.display = "none";
     main();
 }
 
