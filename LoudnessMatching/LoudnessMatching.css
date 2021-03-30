@@ -9,6 +9,6 @@
     margin-left: auto;
     left: 0;
     right: 0;
-    top: 80vh;
-    animation: fadein ease 1s;
+    top: 400px;
+    animation: 1s fadein ease;
 }

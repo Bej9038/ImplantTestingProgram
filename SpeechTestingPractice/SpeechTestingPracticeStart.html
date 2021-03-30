@@ -10,22 +10,22 @@
     <script type = text/javascript src = "SpeechTestingPractice.js"></script>
 </head>
 <body>
-<div id = direction>
     <h2>
         Speech Testing Practice
     </h2>
 
+    <input id = exit type = button value = 'EXIT' onclick = "location.href =
+    '/Implant%20Testing%20Program/Signin/SigninPage.html'">
+
+    <div id = direction>
     <h3>
         Directions: In this test, you will hear a word spoken by either a male voice or a female voice. You will also
         hear noise playing at the same time. 4 word choices will be displayed on the screen. Try to ignore the noise and
         choose the word that best matches the spoken word.
     </h3>
-    <input id = exit type = button value = 'EXIT' onclick = "location.href =
-    '/Implant%20Testing%20Program/Signin/SigninPage.html'">
+        <form id = start action = SpeechTestingPractice.html method = post>
+            <input id = startbutton type = submit value = "Start Test">
+        </form>
 </div>
-
-<form id = start action = SpeechTestingPractice.html method = post>
-    <input id = startbutton type = submit value = "Start Test">
-</form>
 </body>
 </html>

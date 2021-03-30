@@ -121,7 +121,7 @@ input[type = submit]:hover
 }
 
 h1 {
-    margin-top: 0px;
+    margin-top: 0;
     padding: 30px;
     text-align: center;
     background-color: var(--main-color);
@@ -134,6 +134,8 @@ h1 {
 }
 
 h2{
+    margin-top: 0;
+    padding: 30px;
     color: var(--text-color-2);
     font-weight: lighter;
     animation: letterFade ease 1s;
@@ -142,11 +144,15 @@ h2{
     -o-animation: letterFade ease 1s;
 }
 h3{
+    position: absolute;
     color: var(--text-color-2);
     font-weight: lighter;
     width: 70%;
-    margin: auto;
-    top:50%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 120px;
     animation: letterFade ease 1s;
     -webkit-animation: letterFade ease 1s;
     -moz-animation: letterFade ease 1s;
@@ -190,7 +196,7 @@ h3{
     margin-left: auto;
     left: 0;
     right: 0;
-    min-height: 25vh;
+    top: 220px;
     font-family: var(--font);
     font-size: var(--button-text-size);
     color: var(--text-color-2);
@@ -219,7 +225,7 @@ h3{
     margin-left: auto;
     left: 0;
     right: 0;
-    min-height: 48vh;
+    top: 300px;
     animation: fadein ease 1s;
 }
 
@@ -227,11 +233,16 @@ h3{
 
 #start
 {
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 33vh;
+    top: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     animation: fadein ease 1s;
 }
 
@@ -252,8 +263,6 @@ h3{
     font-size: var(--button-text-size);
     font-weight: bold;
     background-color: var(--text-color);
-    /*box-shadow: var(--card-shadow);*/
-    /*border-radius: 4px;*/
 }
 
 /*Speech Testing*/
@@ -288,7 +297,7 @@ h3{
     margin-left: auto;
     left: 0;
     right: 0;
-    min-height: 70vh;
+    top: 220px;
     animation: fadein ease 1s;
 }
 
@@ -315,6 +324,6 @@ h3{
     margin-left: auto;
     left: 0;
     right: 0;
-    min-height: 80vh;
+    top: 400px;
     animation: fadein ease 1s;
 }
