@@ -513,19 +513,21 @@ function initNoise()
     noise = audioCTX.createBufferSource();
     noise.buffer = noiseBuffer;
     noise.loop = true;
+    noise.connect(mute);
 }
 
 /**
- * Loads the noise file async
+ * Loads the noise file async and then begins play after
  */
 function loadNoise()
 {
     let request = new XMLHttpRequest();
-    request.open("GET", "White 10m.mp3", true);
+    request.open("GET", "TE_noise_50-500Hz_300-2400ms.wav", true);
     request.responseType = "arraybuffer";
     request.onload = function()
     {
         audioCTX.decodeAudioData(request.response, (data) => noiseBuffer = data);
+        initNoise();
     };
     request.send();
 }
@@ -572,27 +574,27 @@ function clearCanvas()
 function startOscillators()
 {
     noise.start();
-    // for(let i = 0; i < F0_Xlist.length; i++)
-    // {
-    //     F0_Xlist[i].start();
-    // }
-    // for(let i = 0; i < F0_Ylist.length; i++)
-    // {
-    //     F0_Ylist[i].start();
-    // }
+    for(let i = 0; i < F0_Xlist.length; i++)
+    {
+        F0_Xlist[i].start();
+    }
+    for(let i = 0; i < F0_Ylist.length; i++)
+    {
+        F0_Ylist[i].start();
+    }
 }
 
 function stopOscillators()
 {
     noise.stop();
-    // for(let i = 0; i < F0_Xlist.length; i++)
-    // {
-    //     F0_Xlist[i].stop();
-    // }
-    // for(let i = 0; i < F0_Ylist.length; i++)
-    // {
-    //     F0_Ylist[i].stop();
-    // }
+    for(let i = 0; i < F0_Xlist.length; i++)
+    {
+        F0_Xlist[i].stop();
+    }
+    for(let i = 0; i < F0_Ylist.length; i++)
+    {
+        F0_Ylist[i].stop();
+    }
 }
 
 /**
