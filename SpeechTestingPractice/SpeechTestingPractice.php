@@ -5,6 +5,6 @@
  * @author Ben Jordan
  */
 
-header('/Implant%20Testing%20Program/Signin/SigninPage.html');
+header('/Implant%20Testing%20Program/Signin/Signin.html');
 exit;
 ?>

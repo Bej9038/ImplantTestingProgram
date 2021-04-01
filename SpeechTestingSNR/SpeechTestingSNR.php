@@ -47,6 +47,6 @@ VALUES ($trialid, '$starttime', '$endtime', '$numc', '$arr[0]', '$arr[1]', '$arr
 if ($conn->query($sql) !== TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
-header('Location: /Implant Testing Program/Signin/SigninPage.html');
+header('Location: /Implant Testing Program/Signin/Signin.html');
 exit;
 ?>

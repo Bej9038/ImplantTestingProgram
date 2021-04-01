@@ -5,12 +5,11 @@
  * @author Ben Jordan
  */
 
-//session_start();
-//$subj = $_POST["name"];
-//$currenttime = $_POST["currenttime"];
-//$_SESSION["subj"] = $subj;
-//
-////UserData
+session_start();
+$subj = $_POST["name"];
+$currenttime = $_POST["currenttime"];
+$_SESSION["subj"] = $subj;
+//UserData
 //
 //$path = "/home2/auditot7/public_html/Implant Testing Program/UserData/" . $subj;
 //
@@ -52,7 +51,8 @@
 //
 //mysqli_free_result($result);
 //$conn->close();
+//
 
-header('Location: /Implant Testing Program/Signin/SigninPage.html');
+header('Location: /Implant Testing Program/Signin/Signin.html');
 exit;
 ?>

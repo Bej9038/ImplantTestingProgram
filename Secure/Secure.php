@@ -24,7 +24,7 @@ if($user == "admin" && $pword == "hcitraining")
     exit;
 }
 else {
-    header('Location: /Implant Testing Program/Signin/SigninPage.html');
+    header('Location: /Implant Testing Program/Signin/Signin.html');
     exit;
 }
 ?>

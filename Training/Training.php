@@ -61,7 +61,7 @@ fclose($fp);
 //
 //$conn->close();
 
-header('Location: /Implant Testing Program/Signin/SigninPage.html');
+header('Location: /Implant Testing Program/Signin/Signin.html');
 exit();
 ?>
 
