@@ -151,7 +151,7 @@ h3{
     margin-right: auto;
     left: 0;
     right: 0;
-    top: 120px;
+    min-height: 40vh;
     animation: letterFade ease 1s;
     -webkit-animation: letterFade ease 1s;
     -moz-animation: letterFade ease 1s;
@@ -187,15 +187,12 @@ h3{
 #question
 {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-right: auto;
-    margin-left: auto;
     left: 0;
     right: 0;
-    top: 220px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    top: 550px;
     font-family: var(--font);
     font-size: var(--button-text-size);
     color: var(--text-color-2);
@@ -215,7 +212,6 @@ h3{
 
 #testui
 {
-    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -224,7 +220,7 @@ h3{
     margin-left: auto;
     left: 0;
     right: 0;
-    top: 300px;
+    min-height: 40vh;
     animation: fadein ease 1s;
 }
 

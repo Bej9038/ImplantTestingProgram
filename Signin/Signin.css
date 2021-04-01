@@ -217,7 +217,7 @@ input[type = text] {
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 44vh;
+    min-height: 40vh;
     animation: fadein ease 1s;
     color: var(--text-color-2);
 }
@@ -323,7 +323,7 @@ input[type = submit].signinsubmit2:hover
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 34vh;
+    min-height: 40vh;
     animation: fadein ease 1s;
     -webkit-animation: fadein ease 1s;
     -moz-animation: fadein ease 1s;
