@@ -12,6 +12,8 @@ function pageSetup()
     {
         let d = new Date();
         document.getElementById("currenttime").value = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+        let j = new Date();
+        document.getElementById("currentdate").value = j.getMonth() + "/" + j.getDay() + "/" + j.getFullYear();
     }
 
     //selected current training mode

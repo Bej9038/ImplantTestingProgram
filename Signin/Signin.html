@@ -19,11 +19,12 @@
 
         <button id = settingsmenu onclick="toggleSettings()" class="mdc-icon-button material-icons">menu</button>
 
-        <form id = signin method = post action = Signin.php >
+        <form id = signin method = post action = Signin.php>
             <label id = namelabel for = name> Enter your username </label>
             <input onfocus="this.style.color = '#607d8b'" type = text id = name name = name>
             <input type = hidden id = currenttime name = currenttime>
-            <input class= signinsubmit2 type = submit id = signinsubmit value = "Sign In" onclick = siclick()>
+            <input type = hidden id = currentdate name = currentdate>
+            <input class = signinsubmit2 type = submit id = signinsubmit value = "Sign In" onclick = siclick()>
         </form>
 
          <div id = menu style = "display: none">
