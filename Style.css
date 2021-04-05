@@ -192,7 +192,7 @@ h3{
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-    top: 550px;
+    top: 55vh;
     font-family: var(--font);
     font-size: var(--button-text-size);
     color: var(--text-color-2);
