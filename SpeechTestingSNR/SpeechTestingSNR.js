@@ -134,7 +134,7 @@ function main()
     trial++;
     if(trial > maxTrials)
     {
-        saveData();
+        showScore();
     }
     else
     {
@@ -159,6 +159,15 @@ function saveData()
     document.getElementById("numc").value = numCorrect;
     document.forms["speechsave"].submit();
 }
+
+function showScore()
+{
+    document.getElementById('number').innerHTML = numCorrect + "/120";
+
+    document.getElementById('finalscore').style.display = 'flex';
+    document.getElementById('trial').style.display = 'none';
+}
+
 /**
  * Loads the audio buffer for play
  */

@@ -35,11 +35,13 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 90%;
     padding-bottom: 24px;
 }
 
 #difficulty
 {
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -65,9 +67,53 @@
 
 #snrhint
 {
-    margin-top: 0px;
+    margin-top: 0;
     color: var(--text-color-2);
     font: var(--font);
     font-weight: lighter;
     font-size: 18px;
+}
+
+#finalscore {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    right: 0;
+    left: 0;
+    min-height: 40vh;
+}
+
+#number
+{
+    font-family: var(--font);
+    font-size: var(--button-text-size);
+    color: var(--text-color-2);
+    font-weight: lighter;
+    animation: letterFade ease 1s;
+    -webkit-animation: letterFade ease 1s;
+    -moz-animation: letterFade ease 1s;
+    -o-animation: letterFade ease 1s;
+}
+
+#text
+{
+    font-family: var(--font);
+    font-size: var(--button-text-size);
+    color: var(--text-color-2);
+    font-weight: lighter;
+    animation: letterFade ease 1s;
+    -webkit-animation: letterFade ease 1s;
+    -moz-animation: letterFade ease 1s;
+    -o-animation: letterFade ease 1s;
+}
+
+#endSNR
+{
+    margin-top: 24px;
+    animation: fadein ease 1s;
 }
