@@ -92,17 +92,17 @@ function showModules()
     }
 }
 
-function storeVariable()
-{
-    sessionStorage.setItem("name", document.getElementById('name').value);
-}
-
 function siclick()
 {
     storeVariable();
     setTimeout(function () {
         showModules();
     }, 1000);
+}
+
+function storeVariable()
+{
+    sessionStorage.setItem("name", document.getElementById('name').value);
 }
 
 function toggleSettings()
