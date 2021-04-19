@@ -23,13 +23,13 @@
     </h3>
 
     <div id=snrLevel>
-        <input id=snr1 class = snrbutton type = button value = +6db onclick = 'selectSNR(0.5012, 1, "+6db")'>
-        <input id=snr2 class = snrbutton type = button value = +4db onclick = 'selectSNR(0.6310, 2, "+4db")'>
-        <input id=snr3 class = snrbutton type = button value = +2db onclick = 'selectSNR(0.7943, 3, "+2db")'>
-        <input id=snr4 class = snrbutton type = button value = +0db onclick = 'selectSNR(1, 4, "+0db")'>
-        <input id=snr5 class = snrbutton type = button value = -2db onclick = 'selectSNR(1.2589, 5, "-2db")'>
-        <input id=snr6 class = snrbutton type = button value = -4db onclick = 'selectSNR(1.5849, 6, "-4db")'>
-        <input id=snr7 class = snrbutton type = button value = -6db onclick = 'selectSNR(1.9953, 7, "-6db")'>
+        <input id=snr1 class = snrbutton type = button value = +6db onclick = 'selectSNR(0.5012, 1, 6)'>
+        <input id=snr2 class = snrbutton type = button value = +4db onclick = 'selectSNR(0.6310, 2, 4)'>
+        <input id=snr3 class = snrbutton type = button value = +2db onclick = 'selectSNR(0.7943, 3, 2)'>
+        <input id=snr4 class = snrbutton type = button value = +0db onclick = 'selectSNR(1, 4, 0)'>
+        <input id=snr5 class = snrbutton type = button value = -2db onclick = 'selectSNR(1.2589, 5, -2)'>
+        <input id=snr6 class = snrbutton type = button value = -4db onclick = 'selectSNR(1.5849, 6, -4)'>
+        <input id=snr7 class = snrbutton type = button value = -6db onclick = 'selectSNR(1.9953, 7, -6)'>
     </div>
     <div id=difficulty>
         <p style = "color: rgba(79, 219, 37, 0.3); width: 200px; font-weight: lighter; font: var(--font)">easiest</p>
@@ -59,7 +59,6 @@
     {
         if(!selected)
         {
-            let buttons = document.getElementsByClassName('snrbutton');
             for(let i = 1; i < 8; i++)
             {
                 let id = "snr" + i;

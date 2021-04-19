@@ -6,7 +6,7 @@
 
 let audioCTX = new AudioContext();
 let dac = audioCTX.destination;
-let trial = 0;
+let trial = 119;
 let maxTrials = 120;
 
 let spokenWord;
@@ -138,7 +138,7 @@ function main()
     }
     else
     {
-        document.getElementById("trial").innerHTML = "SNR: " + sessionStorage.getItem('snrLevel') + " Trial: " + trial + "/" + maxTrials;
+        document.getElementById("trial").innerHTML = "SNR: " + sessionStorage.getItem('snrLevel') + "DB Trial: " + trial + "/" + maxTrials;
         document.title = "Speech Testing - " + trial + "/" + maxTrials;
         randSelectValues();
         loadAudio();
@@ -157,6 +157,7 @@ function saveData()
     document.getElementById("endtime").value = endtime;
     document.getElementById("outcome").value = trialOutcomes;
     document.getElementById("numc").value = numCorrect;
+    document.getElementById("snrval").value = sessionStorage.getItem('snrLevel');
     document.forms["speechsave"].submit();
 }
 
