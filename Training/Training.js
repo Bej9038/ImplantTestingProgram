@@ -528,6 +528,7 @@ function loadNoise()
     {
         audioCTX.decodeAudioData(request.response, (data) => noiseBuffer = data);
         initNoise();
+        play();
     };
     request.send();
 }
