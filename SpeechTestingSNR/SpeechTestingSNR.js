@@ -6,7 +6,7 @@
 
 let audioCTX = new AudioContext();
 let dac = audioCTX.destination;
-let trial = 119;
+let trial = 0;
 let maxTrials = 120;
 
 let spokenWord;
