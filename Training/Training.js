@@ -107,14 +107,20 @@ function mouseDown(e)
 
 function displayGradient()
 {
+    ctx.beginPath();
+    ctx.moveTo(freqToDim(F2b, 'x'), freqToDim(F1upperLimit, 'y'));
+    ctx.lineTo(freqToDim(F2upperLimit, 'x'), freqToDim(F1b, 'y'));
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+
     let radian = Math.atan((freqToDim(F1upperLimit, 'y') - freqToDim(F1b, 'y'))/(freqToDim(F2upperLimit, 'x') - freqToDim(F2b, 'x')));
     let angle = -radian * 180 / Math.PI;
     console.log(angle);
-    document.getElementById("canvas").style.backgroundImage = "linear-gradient(" + angle + "deg , white 20%, #80CBC4 50%, white 80%)";
-    let ysh = ( 600 - freqToDim(F1b, 'y') - freqToDim(F1upperLimit, 'y') )/2;
-    let xsh = ( -600 + freqToDim(F2b, 'x') + freqToDim(F2upperLimit, 'x') )/2;
-    document.getElementById("canvas").style.backgroundPosition = xsh+"px "+ysh+"px";
-    document.getElementById("canvas").style.backgroundRepeat = "no-repeat";
+    document.getElementById("gradient").style.backgroundImage = "linear-gradient(" + angle + "deg , white 20%, #80CBC4 50%, white 80%)";
+    let ysh = ( 600 - freqToDim(F1b, 'y') - freqToDim(F1upperLimit, 'y'))/34;
+    let xsh = ( -600 + freqToDim(F2b, 'x') + freqToDim(F2upperLimit, 'x'))/2;
+    document.getElementById("gradient").style.backgroundPosition = xsh+"px "+ysh+"px";
+    document.getElementById("gradient").style.backgroundRepeat = "no-repeat";
 }
 
 /**
@@ -561,9 +567,11 @@ function setFrequencyRange()
 function clearCanvas()
 {
     document.getElementById("hint").style.display = "none";
+    document.getElementById("gradient").style.backgroundImage = "none";
     document.getElementById("canvas").style.backgroundImage = "none";
     document.getElementById("grade").innerHTML = "";
     ctx.clearRect(0, 0, dim, dim);
+    // displayCtx.clearRect(0, 0, dim, dim);
     numClicks = 0;
 
     document.getElementById("canvas").removeEventListener("mousemove", mouseDown);
@@ -643,6 +651,7 @@ function ledOff()
 function loadCanvas()
 {
     ctx = document.getElementById("canvas").getContext("2d");
+    // displayCtx = document.getElementById("border").getContext("2d");
     document.getElementById("canvas").setAttribute("width", dim.toString());
     document.getElementById("canvas").setAttribute("height", dim.toString());
 }

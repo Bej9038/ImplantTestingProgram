@@ -158,7 +158,7 @@ function saveData()
     document.getElementById("outcome").value = trialOutcomes;
     document.getElementById("numc").value = numCorrect;
     document.getElementById("snrval").value = sessionStorage.getItem('snrLevel');
-    document.forms["speechsave"].submit();
+    document.forms["speechsaveSNR"].submit();
 }
 
 function showScore()
