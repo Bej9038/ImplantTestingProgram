@@ -112,15 +112,14 @@ function displayGradient()
     ctx.lineTo(freqToDim(F2upperLimit, 'x'), freqToDim(F1b, 'y'));
     ctx.strokeStyle = "red";
     ctx.stroke();
-    let x = 1;
 
     let radian = Math.atan((freqToDim(F1upperLimit, 'y') - freqToDim(F1b, 'y'))/(freqToDim(F2upperLimit, 'x') - freqToDim(F2b, 'x')));
     let angle = -radian * 180 / Math.PI;
     console.log(angle);
-    document.getElementById("gradient").style.backgroundImage = "linear-gradient(" + angle + "deg , white 20%, #80CBC4 50%, white 80%)";
-    let ysh = ( 600 - freqToDim(F1b, 'y') - freqToDim(F1upperLimit, 'y'))/34;
-    let xsh = ( -600 + freqToDim(F2b, 'x') + freqToDim(F2upperLimit, 'x'))/2;
-    document.getElementById("gradient").style.backgroundPosition = xsh+"px "+ysh+"px";
+    document.getElementById("gradient").style.backgroundImage = "linear-gradient(" + angle + "deg , white 30%, #80CBC4 50%, white 70%)";
+    let yshift = ( 600 - freqToDim(F1b, 'y') - freqToDim(F1upperLimit, 'y')) / 4;
+    let xshift = ( -600 + freqToDim(F2b, 'x') + freqToDim(F2upperLimit, 'x')) / 4;
+    document.getElementById("gradient").style.backgroundPosition = xshift + "px, " + yshift + "px";
     document.getElementById("gradient").style.backgroundRepeat = "no-repeat";
 }
 
