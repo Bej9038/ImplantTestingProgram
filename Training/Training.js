@@ -112,6 +112,7 @@ function displayGradient()
     ctx.lineTo(freqToDim(F2upperLimit, 'x'), freqToDim(F1b, 'y'));
     ctx.strokeStyle = "red";
     ctx.stroke();
+    let x = 1;
 
     let radian = Math.atan((freqToDim(F1upperLimit, 'y') - freqToDim(F1b, 'y'))/(freqToDim(F2upperLimit, 'x') - freqToDim(F2b, 'x')));
     let angle = -radian * 180 / Math.PI;
