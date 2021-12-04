@@ -21,12 +21,12 @@ let offsetX = -13;
 let offsetY = -220;
 let diagonalOrientation = 1;
 
-let F1upperLimit = 160;
-let F1b = 120;
+let F1upper = 160;
+let F1lower = 120;
 let F1dimPerFreq;
 let F0_Xlist = [];
-let F2upperLimit = 180;
-let F2b = 140;
+let F2upper = 180;
+let F2lower = 140;
 let F2dimPerFreq;
 let F0_Ylist = [];
 
@@ -107,20 +107,23 @@ function mouseDown(e)
 
 function displayGradient()
 {
-    ctx.beginPath();
-    ctx.moveTo(freqToDim(F2b, 'x'), freqToDim(F1upperLimit, 'y'));
-    ctx.lineTo(freqToDim(F2upperLimit, 'x'), freqToDim(F1b, 'y'));
-    ctx.strokeStyle = "red";
-    ctx.stroke();
+    // ctx.beginPath();
+    // ctx.moveTo(freqToDim(F2lower, 'x'), freqToDim(F1upper, 'y'));
+    // ctx.lineTo(freqToDim(F2upper, 'x'), freqToDim(F1lower, 'y'));
+    // ctx.strokeStyle = "red";
+    // ctx.stroke();
     let x = 1;
 
-    let radian = Math.atan((freqToDim(F1upperLimit, 'y') - freqToDim(F1b, 'y'))/(freqToDim(F2upperLimit, 'x') - freqToDim(F2b, 'x')));
+    let radian = Math.atan((freqToDim(F1upper, 'y') - freqToDim(F1lower, 'y'))/(freqToDim(F2upper, 'x') - freqToDim(F2lower, 'x')));
     let angle = -radian * 180 / Math.PI;
     console.log(angle);
     document.getElementById("gradient").style.backgroundImage = "linear-gradient(" + angle + "deg , white 20%, #80CBC4 50%, white 80%)";
-    let ysh = ( 600 - freqToDim(F1b, 'y') - freqToDim(F1upperLimit, 'y'))/34;
-    let xsh = ( -600 + freqToDim(F2b, 'x') + freqToDim(F2upperLimit, 'x'))/2;
-    document.getElementById("gradient").style.backgroundPosition = xsh+"px "+ysh+"px";
+    let ysh = ( 600 - freqToDim(F1lower, 'y') - freqToDim(F1upper, 'y'))/2;
+    let xsh = ( 600 - freqToDim(F2lower, 'x') - freqToDim(F2upper, 'x'))/2;
+    console.log(ysh);
+    console.log(xsh);
+    document.getElementById("gradient").style.top = -300 - ysh + "px";
+    document.getElementById("gradient").style.left = -300 - xsh + "px";
     document.getElementById("gradient").style.backgroundRepeat = "no-repeat";
 }
 
@@ -137,12 +140,12 @@ function dimToFreq(d, axis)
         if(axis === 'x')
         {
             d = Math.max(d + offsetX, 0);
-            return d / F1dimPerFreq + F1b;
+            return d / F1dimPerFreq + F1lower;
         }
         else
         {
             d = Math.max(convertY(d + offsetY), 0);
-            return d / F2dimPerFreq + F2b;
+            return d / F2dimPerFreq + F2lower;
         }
     }
     else if(diagonalOrientation === 2)
@@ -150,12 +153,12 @@ function dimToFreq(d, axis)
         if(axis === 'x')
         {
             d = Math.max(d + offsetX, 0);
-            return F1upperLimit - d / F1dimPerFreq;
+            return F1upper - d / F1dimPerFreq;
         }
         else
         {
             d = Math.max(convertY(d + offsetY), 0);
-            return d / F2dimPerFreq + F2b;
+            return d / F2dimPerFreq + F2lower;
         }
     }
     else if(diagonalOrientation === 3)
@@ -163,12 +166,12 @@ function dimToFreq(d, axis)
         if(axis === 'x')
         {
             d = Math.max(d + offsetX, 0);
-            return d / F1dimPerFreq + F1b;
+            return d / F1dimPerFreq + F1lower;
         }
         else
         {
             d = Math.max(convertY(d + offsetY), 0);
-            return F2upperLimit - d / F2dimPerFreq;
+            return F2upper - d / F2dimPerFreq;
         }
     }
     else if(diagonalOrientation === 4)
@@ -176,12 +179,12 @@ function dimToFreq(d, axis)
         if(axis === 'x')
         {
             d = Math.max(d + offsetX, 0);
-            return F1upperLimit - d / F1dimPerFreq;
+            return F1upper - d / F1dimPerFreq;
         }
         else
         {
             d = Math.max(convertY(d + offsetY), 0);
-            return F2upperLimit - d / F2dimPerFreq;
+            return F2upper - d / F2dimPerFreq;
         }
     }
 }
@@ -197,100 +200,100 @@ function freqToDim(f, axis)
     if(diagonalOrientation === 1)
     {
         if(axis === 'x') {
-            if(f < F1b) {
+            if(f < F1lower) {
                 return 0;
             }
-            else if(f > F1upperLimit) {
+            else if(f > F1upper) {
                 return 600;
             }
             else {
-                return (f - F1b) * F1dimPerFreq;
+                return (f - F1lower) * F1dimPerFreq;
             }
         }
         else {
-            if(f < F2b) {
+            if(f < F2lower) {
                 return 0;
             }
-            else if(f > F2upperLimit) {
+            else if(f > F2upper) {
                 return 600;
             }
             else {
-                return (f - F2b) * F2dimPerFreq;
+                return (f - F2lower) * F2dimPerFreq;
             }
         }
     }
     else if(diagonalOrientation === 2)
     {
         if(axis === 'x') {
-            if(f < F1b) {
+            if(f < F1lower) {
                 return 600;
             }
-            else if(f > F1upperLimit) {
+            else if(f > F1upper) {
                 return 0;
             }
             else {
-                return (F1upperLimit - f) * F1dimPerFreq;
+                return (F1upper - f) * F1dimPerFreq;
             }
         }
         else {
-            if(f < F2b) {
+            if(f < F2lower) {
                 return 0;
             }
-            else if(f > F2upperLimit) {
+            else if(f > F2upper) {
                 return 600;
             }
             else {
-                return (f - F2b) * F2dimPerFreq;
+                return (f - F2lower) * F2dimPerFreq;
             }
         }
     }
     else if(diagonalOrientation === 3)
     {
         if(axis === 'x') {
-            if(f < F1b) {
+            if(f < F1lower) {
                 return 0;
             }
-            else if(f > F1upperLimit) {
+            else if(f > F1upper) {
                 return 600;
             }
             else {
-                return (f - F1b) * F1dimPerFreq;
+                return (f - F1lower) * F1dimPerFreq;
             }
         }
         else {
-            if(f < F2b) {
+            if(f < F2lower) {
                 return 600;
             }
-            else if(f > F2upperLimit) {
+            else if(f > F2upper) {
                 return 0;
             }
             else {
-                return (F2upperLimit - f) * F2dimPerFreq;
+                return (F2upper - f) * F2dimPerFreq;
             }
         }
     }
     else if(diagonalOrientation === 4)
     {
         if(axis === 'x') {
-            if(f < F1b) {
+            if(f < F1lower) {
                 return 600;
             }
-            else if(f > F1upperLimit) {
+            else if(f > F1upper) {
                 return 0;
             }
             else {
-                return (F1upperLimit - f) * F1dimPerFreq;
+                return (F1upper - f) * F1dimPerFreq;
             }
         }
         else {
-            if(f < F2b) {
+            if(f < F2lower) {
                 return 600;
             }
-            else if(f > F2upperLimit) {
+            else if(f > F2upper) {
                 return 0;
             }
             else {
-                return (F2upperLimit - f) * F2dimPerFreq;
+                return (F2upper - f) * F2dimPerFreq;
             }
         }
     }
@@ -318,7 +321,7 @@ function calculateGrade(x, y)
 {
     let F1 = dimToFreq(x, 'x');
     let F2 = dimToFreq(y, 'y');
-    let minGrade = Math.max(F1upperLimit - F2b, F2upperLimit - F1b);
+    let minGrade = Math.max(F1upper - F2lower, F2upper - F1lower);
     let result = Math.abs(F1 - F2);
 
     return Math.round(100 - result/minGrade * 100);
@@ -441,7 +444,7 @@ function trialSetup()
     initOsc();
     initCanvas();
     mousePos[trial - 1].push("");
-    mousePos[trial - 1].push("\nX1: " + F1b + " X2: " + F1upperLimit + "Y1: " + F2b + "Y2: " + F2upperLimit);
+    mousePos[trial - 1].push("\nX1: " + F1lower + " X2: " + F1upper + "Y1: " + F2lower + "Y2: " + F2upper);
 }
 
 function updateTrialNum()
@@ -498,7 +501,7 @@ function initOsc()
     for(let i = 0; i < 3; i++)
     {
         let osc = audioCTX.createOscillator();
-        osc.frequency.value = F1b * (i + 1);
+        osc.frequency.value = F1lower * (i + 1);
         osc.connect(mute);
         F0_Xlist.push(osc);
     }
@@ -506,7 +509,7 @@ function initOsc()
     for(let i = 0; i < 6; i++)
     {
         let osc = audioCTX.createOscillator();
-        osc.frequency.value = F2b * (i + 15);
+        osc.frequency.value = F2lower * (i + 15);
         osc.connect(mute);
         F0_Ylist.push(osc);
     }
@@ -547,18 +550,18 @@ function setFrequencyRange()
 {
     let xlRand = (Math.random() * (140 - 120)) + 120; //xaxis lower limit
     let xuRand = (Math.random() * (180 - 160)) + 160; //xaxis upper limit
-    F1b = xlRand;
-    F1upperLimit = xuRand;
-    F1dimPerFreq = dim / (F1upperLimit - F1b);
-    // console.log(F1b);
-    // console.log(F1upperLimit);
+    F1lower = xlRand;
+    F1upper = xuRand;
+    F1dimPerFreq = dim / (F1upper - F1lower);
+    console.log(F1lower);
+    console.log(F1upper);
     let ylRand = (Math.random() * (140 - 120)) + 120; //y axis lower limit
     let yuRand = (Math.random() * (180 - 160)) + 160; //y axis upper limit
-    F2b = ylRand;
-    F2upperLimit = yuRand;
-    F2dimPerFreq = dim / (F2upperLimit - F2b);
-    // console.log(F2b);
-    // console.log(F2upperLimit);
+    F2lower = ylRand;
+    F2upper = yuRand;
+    F2dimPerFreq = dim / (F2upper - F2lower);
+    console.log(F2lower);
+    console.log(F2upper);
 }
 
 
